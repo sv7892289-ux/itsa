@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ITSaBOT</title>
+
+  <!-- PWA: manifest y configuración -->
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#022">
+
+  <!-- Compatibilidad modo app -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="ITSaBOT">
+  <link rel="apple-touch-icon" href="img/icon-192.png">
+
+  <!-- Estilos externos -->
+  <link rel="stylesheet" href="estilos.css">
+
+  <!-- Fuentes y librerías -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+  <div class="login-card">
+    <img src="img/logo.png" alt="ITSaBOT Logo" class="logo">
+    <h2>ITSaBOT</h2>
+
+    <a href="menu.html" class="login-btn">Iniciar</a>
+
+    <a href="#" class="forgot">Síguenos en nuestras redes sociales</a>
+
+    <div class="social-icons">
+      <div class="social-btn google">
+        <i class="fab fa-google"></i>
+      </div>
+      <div class="social-btn facebook">
+        <i class="fab fa-facebook-f"></i>
+      </div>
+      <div class="social-btn twitter">
+        <i class="fab fa-twitter"></i>
+      </div>
+    </div>
+  </div>
+
+  <!-- PWA install y registro del Service Worker -->
+  <script type="module" src="pwa-install.js"></script>
+
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('./sw.js')
+        .then(() => console.log('✅ Service Worker registrado correctamente'))
+        .catch(err => console.warn('❌ Error registrando SW:', err));
+    }
+  </script>
+</body>
+</html>

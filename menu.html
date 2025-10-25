@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Menu · ITSaBOT</title>
+
+  <!-- PWA: manifest y colores -->
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#032221">
+
+  <!-- PWA: Meta etiquetas de Apple para iOS (Pantalla completa) -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="ITSaBOT">
+  <link rel="apple-touch-icon" href="/img/icon-192.png">
+
+  <!-- ===== ESTILOS ===== -->
+  <link rel="stylesheet" href="/css/estilo.css"> <!-- Ahora usa el nuevo estilo global -->
+  
+  <!-- Fuentes y librerías -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="menu-page">
+  <header class="site-header" role="banner">
+    <div class="container">
+      <a class="brand" href="/menu.html" aria-label="Volver al inicio">
+        <img src="/img/logo.png" alt="Logo ITSaBOT" class="logo">
+        <span>ITSaBOT</span>
+      </a>
+      <nav id="main-nav-menu" class="main-nav" role="navigation" aria-label="Menú principal">
+        <ul>
+          <li><a href="/menu.html">Menú</a></li>
+          <li><a href="/chat.html">Chat</a></li>
+          <li><a href="/tramites.html">Trámites</a></li>
+          <li><a href="/calendario.html">Calendario</a></li>
+          <li><a href="/info.html">Información</a></li>
+          <li><a href="/perfil.html">Perfil</a></li>
+        </ul>
+      </nav>
+      <!-- Botón hamburguesa (móvil) -->
+      <button class="menu-toggle" aria-expanded="false" aria-controls="main-nav-menu">
+        <span class="hamburger"></span>
+        <span class="sr-only">Menú</span>
+      </button>
+    </div>
+  </header>
+
+  <main class="container" role="main">
+    <h1>Menú Principal</h1>
+
+    <!-- ===== CARRUSEL DE IMÁGENES ===== -->
+    <section id="carousel" aria-label="Galería institucional">
+      <div class="carousel-container" id="carousel-container">
+        <div class="carousel-track" id="carousel-track" aria-live="polite">
+          <!-- Las imágenes del carrusel (15) -->
+          <img src="/img/img1/img1.jpg" alt="Actividad académica 1" loading="lazy">
+          <img src="/img/img1/img2.jpg" alt="Laboratorio de informática" loading="lazy">
+          <img src="/img/img1/img3.jpg" alt="Clase de gastronomía" loading="lazy">
+          <img src="/img/img1/img4.jpg" alt="Evento institucional" loading="lazy">
+          <img src="/img/img1/img5.jpg" alt="Biblioteca ITSa" loading="lazy">
+          <img src="/img/img1/img6.jpg" alt="Estudiantes en práctica" loading="lazy">
+          <img src="/img/img1/img7.jpg" alt="Docentes ITSa" loading="lazy">
+          <img src="/img/img1/img8.jpg" alt="Inscripción académica" loading="lazy">
+          <img src="/img/img1/img9.jpg" alt="Certificación de estudios" loading="lazy">
+          <img src="/img/img1/img10.jpg" alt="Tecnología educativa" loading="lazy">
+          <img src="/img/img1/img11.jpg" alt="Secretariado ejecutivo" loading="lazy">
+          <img src="/img/img1/img12.jpg" alt="ITSaBOT en acción" loading="lazy">
+          <img src="/img/img1/img13.jpg" alt="ITSA en eventos" loading="lazy">
+          <img src="/img/img1/img14.jpg" alt="ITSA comunidad" loading="lazy">
+          <img src="/img/img1/img15.jpg" alt="Instituto Tecnológico Sacaba" loading="lazy">
+        </div>
+        <button id="prev-btn" class="carousel-btn prev" aria-label="Anterior">
+          <i class="fas fa-chevron-left"></i>
+        </button>
+        <button id="next-btn" class="carousel-btn next" aria-label="Siguiente">
+          <i class="fas fa-chevron-right"></i>
+        </button>
+        <div class="carousel-indicators" id="carousel-indicators"></div>
+      </div>
+    </section>
+
+    <!-- ===== ACCESOS RÁPIDOS CON ENLACES CORREGIDOS ===== -->
+    <section id="actions" aria-labelledby="actions-title">
+      <h2 id="actions-title">Accesos rápidos</h2>
+      <div class="cards">
+        
+        <a href="/chat.html" class="card" id="chat">
+          <div class="card-header">
+            <i class="fas fa-comments"></i> Chat / Asistente
+          </div>
+          <div class="card-body">
+            <p>Consultas rápidas con nuestro bot, disponible 24/7.</p>
+          </div>
+        </a>
+
+        <a href="/tramites.html" class="card" id="tramites">
+          <div class="card-header">
+            <i class="fas fa-file-alt"></i> Trámites
+          </div>
+          <div class="card-body">
+            <p>Certificados, inscripciones y más, todo en un solo lugar.</p>
+          </div>
+        </a>
+
+        <a href="/calendario.html" class="card" id="calendario">
+          <div class="card-header">
+            <i class="fas fa-calendar-alt"></i> Calendario
+          </div>
+          <div class="card-body">
+            <p>Fechas académicas importantes, feriados y eventos.</p>
+          </div>
+        </a>
+
+        <a href="/info.html" class="card" id="info">
+          <div class="card-header">
+            <i class="fas fa-info-circle"></i> Información
+          </div>
+          <div class="card-body">
+            <p>Encuentra carreras, horarios de atención y contactos.</p>
+          </div>
+        </a>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <small>© Instituto Tecnológico Sacaba - ITSaBOT</small>
+    </div>
+  </footer>
+
+  <!-- Botón flotante de chat -->
+  <a href="/chat.html" class="floating-chat-btn" aria-label="Abrir chat">
+    <i class="fas fa-comments"></i>
+    <span>Chat</span>
+  </a>
+
+  <!-- ===== SCRIPTS ===== -->
+  <script>
+    // --- Script del Carrusel ---
+    const track = document.getElementById('carousel-track');
+    const prevBtn = document.getElementById('prev-btn');
+    const nextBtn = document.getElementById('next-btn');
+    const indicatorsContainer = document.getElementById('carousel-indicators');
+    const carouselContainer = document.getElementById('carousel-container');
+    const images = track.children;
+    const totalImages = images.length;
+
+    // Ajustar el ancho del track dinámicamente
+    track.style.width = `${totalImages * 100}%`;
+    Array.from(images).forEach(img => img.style.width = `${100 / totalImages}%`);
+
+    let currentIndex = 0;
+    let autoSlide = true;
+
+    // Generar indicadores
+    for (let i = 0; i < totalImages; i++) {
+      const dot = document.createElement('button');
+      dot.classList.add('indicator');
+      dot.setAttribute('aria-label', `Ir a slide ${i + 1}`);
+      dot.dataset.index = i;
+      dot.addEventListener('click', () => {
+        currentIndex = i;
+        updateCarousel();
+      });
+      indicatorsContainer.appendChild(dot);
+    }
+
+    function updateCarousel() {
+      const offset = -currentIndex * (100 / totalImages);
+      track.style.transform = `translateX(${offset}%)`;
+      
+      document.querySelectorAll('.indicator').forEach((dot, i) => {
+        dot.classList.toggle('active', i === currentIndex);
+      });
+    }
+
+    nextBtn.addEventListener('click', () => {
+      currentIndex = (currentIndex + 1) % totalImages;
+      updateCarousel();
+    });
+
+    prevBtn.addEventListener('click', () => {
+      currentIndex = (currentIndex - 1 + totalImages) % totalImages;
+      updateCarousel();
+    });
+
+    carouselContainer.addEventListener('mouseenter', () => autoSlide = false);
+    carouselContainer.addEventListener('mouseleave', () => autoSlide = true);
+
+    setInterval(() => {
+      if (autoSlide) {
+        currentIndex = (currentIndex + 1) % totalImages;
+        updateCarousel();
+      }
+    }, 5000);
+    
+    // Inicializar carrusel en la primera imagen
+    updateCarousel();
+
+    // --- Registro del Service Worker ---
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/sw.js')
+        .then(() => console.log('Service Worker registrado en menu.html'))
+        .catch(err => console.warn('Error SW:', err));
+    }
+
+    
+  </script>
+  <script src="/js/mobile-menu.js" defer></script>
+</body>
+</html>

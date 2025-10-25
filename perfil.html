@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Mi Perfil · ITSaBOT</title>
+
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#3b82f6">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="ITSaBOT">
+  <link rel="apple-touch-icon" href="/img/icon-192.png">
+
+  <!-- Enlazamos la hoja de estilos principal -->
+  <link rel="stylesheet" href="/css/estilo.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="perfil-page">
+  <header class="site-header" role="banner">
+    <div class="container">
+      <a class="brand" href="/menu.html" aria-label="Volver al menú">
+        <img src="/img/logo.png" alt="Logo ITSaBOT" class="logo">
+        <span>ITSaBOT</span>
+      </a>
+      <nav id="main-nav-menu" class="main-nav" role="navigation" aria-label="Navegación secundaria">
+        <ul>
+          <li><a href="/menu.html">Menú</a></li>
+          <li><a href="/chat.html">Chat</a></li>
+          <li><a href="/tramites.html">Trámites</a></li>
+          <li><a href="/calendario.html">Calendario</a></li>
+          <li><a href="/info.html">Información</a></li>
+          <li><a href="/perfil.html">Perfil</a></li>
+        </ul>
+      </nav>
+      <!-- Botón hamburguesa (móvil) -->
+      <button class="menu-toggle" aria-expanded="false" aria-controls="main-nav-menu">
+        <span class="hamburger"></span>
+        <span class="sr-only">Menú</span>
+      </button>
+    </div>
+  </header>
+
+  <main class="container" role="main">
+    <h1>Mi Perfil</h1>
+
+    <section id="datos-personales" aria-labelledby="datos-title">
+      <h2 id="datos-title">Datos Personales</h2>
+      <form>
+        <div style="margin-bottom: 1rem;">
+          <label for="nombre">Nombre completo</label><br>
+          <input type="text" id="nombre" value="María López" style="width:100%; padding:8px; margin-top:4px; border-radius:6px; border:1px solid #ddd;">
+        </div>
+        <div style="margin-bottom: 1rem;">
+          <label for="carrera">Carrera</label><br>
+          <input type="text" id="carrera" value="Secretariado Ejecutivo" style="width:100%; padding:8px; margin-top:4px; border-radius:6px; border:1px solid #ddd;" disabled>
+        </div>
+        <div style="margin-bottom: 1rem;">
+          <label for="email">Email institucional</label><br>
+          <input type="email" id="email" value="maria.lopez@itsacaba.edu.bo" style="width:100%; padding:8px; margin-top:4px; border-radius:6px; border:1px solid #ddd;">
+        </div>
+        <button type="button" class="btn primary">Actualizar datos</button>
+      </form>
+    </section>
+
+    <section id="notificaciones" aria-labelledby="notificaciones-title" style="margin-top: 2rem;">
+      <h2 id="notificaciones-title">Notificaciones</h2>
+      <p>Recibir alertas sobre:</p>
+      <ul>
+        <li><input type="checkbox" id="not-tramites" checked> Estado de mis trámites</li>
+        <li><input type="checkbox" id="not-calendario"> Cambios en el calendario académico</li>
+        <li><input type="checkbox" id="not-eventos"> Eventos institucionales</li>
+      </ul>
+      <button class="btn">Consultar Estado</button>
+    </section>
+
+    <section id="sesion" aria-labelledby="sesion-title" style="margin-top: 2rem;">
+      <h2 id="sesion-title">Seguridad</h2>
+      <p><a class="btn" href="/login.html" style="background:#ef4444; border-color:#ef4444;">Cerrar sesión</a></p>
+    </section>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <small>© Instituto Tecnológico Sacaba - ITSaBOT</small>
+    </div>
+  </footer>
+
+  <!-- Botón flotante de chat -->
+  <a href="/chat.html" class="floating-chat-btn" aria-label="Abrir chat">
+    <i class="fas fa-comments"></i>
+    <span>Chat</span>
+  </a>
+
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/sw.js')
+        .then(() => console.log('Service Worker registrado en perfil.html'))
+        .catch(err => console.warn('Error SW:', err));
+    }
+  </script>
+  <script src="/js/mobile-menu.js" defer></script>
+  <script src="/js/animations.js" defer></script>
+</body>
+</html>

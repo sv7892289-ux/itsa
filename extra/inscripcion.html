@@ -1,0 +1,116 @@
+    <!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Inscripción · ITSaBOT</title>
+
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#032221">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="ITSaBOT">
+  <link rel="apple-touch-icon" href="/img/icon-192.png">
+
+  <!-- Enlazamos la nueva hoja de estilos para inscripción -->
+  <link rel="stylesheet" href="/css/inscripcion-style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="tramites-page">
+  <header class="site-header" role="banner">
+    <div class="container">
+      <a class="brand" href="/menu.html" aria-label="Volver al menú">
+        <img src="/img/logo.png" alt="Logo ITSaBOT" class="logo">
+        <span>ITSaBOT</span>
+      </a>
+      <nav id="main-nav-menu" class="main-nav" role="navigation" aria-label="Navegación secundaria">
+        <ul>
+          <li><a href="/chat.html">Chat</a></li>
+          <li><a href="/tramites.html">Trámites</a></li>
+          <li><a href="/calendario.html">Calendario</a></li>
+          <li><a href="/info.html">Información</a></li>
+          <li><a href="/perfil.html">Perfil</a></li>
+        </ul>
+      </nav>
+      <!-- Botón hamburguesa (móvil) -->
+      <button class="menu-toggle" aria-expanded="false" aria-controls="main-nav-menu">
+        <span class="hamburger"></span>
+        <span class="sr-only">Menú</span>
+      </button>
+    </div>
+  </header>
+
+  <main class="container" role="main">
+    <!-- Panel principal de dos columnas -->
+    <div class="main-panel">
+      <!-- Columna de Requisitos -->
+      <section class="requisitos-section">
+        <h2>Requisitos</h2>
+        <ol>
+          <li>Documento de identidad (DNI o pasaporte).</li>
+          <li>Acta de nacimiento.</li>
+          <li>Carta de recomendación (opcional).</li>
+          <li>Pago de derechos de inscripción.</li>
+        </ol>
+      </section>
+      
+      <!-- Columna de Formulario -->
+      <section class="form-section">
+        <h2>Formulario de Inscripción</h2>
+        <form>
+          <div class="form-group">
+            <label for="nombre">Nombre completo</label>
+            <input type="text" id="nombre" placeholder="Escribe tu nombre y apellido">
+          </div>
+          <div class="form-group">
+            <label for="email">Correo Electrónico</label>
+            <input type="email" id="email" placeholder="ejemplo@correo.com">
+          </div>
+          <div class="form-group">
+            <label for="carrera">Carrera de Interés</label>
+            <div class="carrera-options" id="carrera">
+              <div class="radio-option">
+                <input type="radio" id="carrera-sistemas" name="carrera" value="Sistemas Informáticos"><label for="carrera-sistemas">Sistemas Informáticos</label>
+              </div>
+              <div class="radio-option">
+                <input type="radio" id="carrera-secretariado" name="carrera" value="Secretariado Ejecutivo"><label for="carrera-secretariado">Secretariado Ejecutivo</label>
+              </div>
+              <div class="radio-option">
+                <input type="radio" id="carrera-gastronomia" name="carrera" value="Gastronomia"><label for="carrera-gastronomia">Gastronomía</label>
+              </div>
+              <div class="radio-option">
+                <input type="radio" id="carrera-informatica" name="carrera" value="Ingenieria Informatica"><label for="carrera-informatica">Ingeniería Informática</label>
+              </div>
+              <div class="radio-option">
+                <input type="radio" id="carrera-topografia" name="carrera" value="Topografia"><label for="carrera-topografia">Topografía</label>
+              </div>
+              <div class="radio-option">
+                <input type="radio" id="carrera-mecanica" name="carrera" value="Mecanica Automotriz"><label for="carrera-mecanica">Mecánica Automotriz</label>
+              </div>
+            </div>
+          </div>
+          <button type="button" class="btn submit">Enviar formulario</button>
+        </form>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <small>© Instituto Tecnológico Sacaba - ITSaBOT</small>
+    </div>
+  </footer>
+
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/sw.js')
+        .then(() => console.log('Service Worker registrado'))
+        .catch(err => console.warn('Error SW:', err));
+    }
+  </script>
+  <script src="/js/mobile-menu.js" defer></script>
+</body>
+</html>

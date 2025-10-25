@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Información · ITSaBOT</title>
+
+  <!-- PWA -->
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#3b82f6">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="ITSaBOT">
+  <link rel="apple-touch-icon" href="/img/icon-192.png">
+
+  <!-- Estilos -->
+  <link rel="stylesheet" href="css/estilo.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="info-page">
+  <header class="site-header" role="banner">
+    <div class="container">
+      <a class="brand" href="/menu.html" aria-label="Volver al menú">
+        <img src="/img/logo.png" alt="Logo ITSaBOT" class="logo">
+        <span>ITSaBOT</span>
+      </a>
+
+      <!-- Navegación principal -->
+      <nav id="main-nav-menu" class="main-nav" role="navigation" aria-label="Menú principal">
+        <ul>
+          <li><a href="/menu.html">Menú</a></li>
+          <li><a href="/chat.html">Chat</a></li>
+          <li><a href="/tramites.html">Trámites</a></li>
+          <li><a href="/calendario.html">Calendario</a></li>
+          <li><a href="/info.html">Información</a></li>
+          <li><a href="/perfil.html">Perfil</a></li>
+        </ul>
+      </nav>
+      <!-- Botón hamburguesa (móvil) -->
+      <button class="menu-toggle" aria-expanded="false" aria-controls="main-nav-menu">
+        <span class="hamburger"></span>
+        <span class="sr-only">Menú</span>
+      </button>
+    </div>
+  </header>
+
+  <main class="container" role="main">
+    <div class="info-layout">
+      <div class="info-content">
+        <h1>Información Institucional</h1>
+
+        <section id="carreras" aria-labelledby="carreras-title">
+          <h2 id="carreras-title">Carreras</h2>
+          <ul>
+            <li>Gastronomía</li>
+            <li>Contaduría Pública</li>
+            <li>Informática Industrial</li>
+            <li>Secretariado Ejecutivo</li>
+          </ul>
+        </section>
+
+        <section id="contacto" aria-labelledby="contacto-title">
+          <h2 id="contacto-title">Contacto</h2>
+          <p><strong>Dirección:</strong> Av. Principal, Sacaba</p>
+          <p><strong>Teléfono:</strong> (591) 4-1234567</p>
+          <p><strong>Email:</strong> info@itsacaba.edu.bo</p>
+        </section>
+
+        <section id="autoatencion" aria-labelledby="autoatencion-title">
+          <h2 id="autoatencion-title">ITSaBOT</h2>
+          <p>Asistente virtual que automatiza trámites, responde consultas y brinda información 24/7.</p>
+          <ul>
+            <li>Acceso inmediato a información</li>
+            <li>Menos filas en secretaría</li>
+            <li>Respuestas rápidas y actualizadas</li>
+          </ul>
+        </section>
+
+        <section id="horarios" aria-labelledby="horarios-title">
+          <h2 id="horarios-title">Horarios</h2>
+          <p><strong>Secretaría:</strong> L–V, 8:00 – 18:00</p>
+          <p><strong>Biblioteca:</strong> L–V, 9:00 – 17:00</p>
+        </section>
+      </div>
+
+      <aside class="info-sidebar">
+        <img src="/img/instituto.jpg" alt="Instituto Tecnológico Sacaba" class="sidebar-image">
+      </aside>
+    </div>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <small>© Instituto Tecnológico Sacaba - ITSaBOT</small>
+    </div>
+  </footer>
+
+  <!-- ✅ BOTÓN FLOTANTE DE CHAT EN LA PARTE INFERIOR ✅ -->
+  <a href="/chat.html" class="floating-chat-btn" aria-label="Abrir chat">
+    <i class="fas fa-comments"></i>
+    <span>Chat</span>
+  </a>
+
+  <!-- Scripts -->
+  <script src="/js/animations.js" defer></script>
+  <script src="/js/mobile-menu.js" defer></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/sw.js')
+        .then(() => console.log('Service Worker registrado en info.html'))
+        .catch(err => console.warn('Error SW:', err));
+    }
+  </script>
+</body>
+</html>

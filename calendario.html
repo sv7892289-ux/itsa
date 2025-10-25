@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Calendario · ITSaBOT</title>
+
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#0B1E26">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="ITSaBOT">
+  <link rel="apple-touch-icon" href="/img/icon-192.png">
+
+  <link rel="stylesheet" href="/css/estilo.css">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="calendario-page">
+  <header class="site-header" role="banner">
+    <div class="container">
+      <a class="brand" href="/menu.html" aria-label="Volver al menú">
+        <img src="/img/logo.png" alt="Logo ITSaBOT" class="logo">
+        <span>ITSaBOT</span>
+      </a>
+      <nav id="main-nav-menu" class="main-nav" role="navigation" aria-label="Navegación secundaria">
+        <ul>
+          <li><a href="/menu.html">Menú</a></li>
+          <li><a href="/chat.html">Chat</a></li>
+          <li><a href="/tramites.html">Trámites</a></li>
+          <li><a href="/calendario.html">Calendario</a></li>
+          <li><a href="/info.html">Información</a></li>
+          <li><a href="/perfil.html">Perfil</a></li>
+        </ul>
+      </nav>
+      <button class="menu-toggle" aria-expanded="false" aria-controls="main-nav-menu">
+        <span class="hamburger"></span>
+        <span class="sr-only">Menú</span>
+      </button>
+    </div>
+  </header>
+
+  <main class="container" role="main">
+    <!-- Panel modernizado para el calendario -->
+    <section class="card-panel" id="calendario-panel" aria-labelledby="calendario-title">
+      <div class="card-panel-header">
+        <i class="fas fa-calendar-alt"></i>
+        <h1 id="calendario-title">Calendario Institucional</h1>
+      </div>
+      <div class="card-panel-body">
+        <p class="intro">Consulta fechas académicas, periodos de inscripción, feriados y eventos del Instituto.</p>
+        <div class="calendario-wrapper">
+          <iframe 
+            src="https://calendar.google.com/calendar/embed?src=es.bo%23holiday%40group.v.calendar.google.com&ctz=America%2FLa_Paz"
+            class="calendario-iframe"
+            title="Calendario Académico ITSa">
+          </iframe>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <small>© Instituto Tecnológico Sacaba - ITSaBOT</small>
+    </div>
+  </footer>
+
+  <!-- Botón flotante de chat -->
+  <a href="/chat.html" class="floating-chat-btn" aria-label="Abrir chat">
+    <i class="fas fa-comments"></i>
+    <span>Chat</span>
+  </a>
+
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/sw.js')
+        .then(() => console.log('Service Worker registrado'))
+        .catch(err => console.warn('Error SW:', err));
+    }
+  </script>
+  <script src="/js/mobile-menu.js" defer></script>
+  <script src="/js/animations.js" defer></script>
+</body>
+</html>

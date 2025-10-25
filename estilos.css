@@ -1,0 +1,304 @@
+:root {
+  --color-primary: #10B981;
+  --color-primary-dark: #059669;
+  --color-primary-light: #34D399;
+  --color-background: #F3FBF6;
+  --color-text: #ffffff;
+  --color-text-dark: #06271a;
+  --font-body: 'Inter', sans-serif;
+  --font-heading: 'Poppins', sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: url('img/fondo.jpeg') no-repeat center center;
+  background-size: cover;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: var(--font-body);
+  color: var(--color-text);
+}
+
+.login-card {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 40px;
+  width: 350px;
+  max-width: 90%;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  text-align: center;
+}
+
+.login-card .logo {
+  width: 180px;
+  height: auto;
+  margin-bottom: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+  object-fit: contain;
+}
+
+.login-card h2 {
+  color: var(--color-text);
+  margin-bottom: 15px;
+  text-align: center;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 28px;
+  letter-spacing: 1.5px;
+}
+
+.login-card .subtitle {
+  color: var(--color-text);
+  margin-bottom: 35px;
+  font-size: 0.95rem;
+  opacity: 0.9;
+  letter-spacing: 0.5px;
+  line-height: 1.5;
+}
+
+.input-group {
+  margin-bottom: 20px;
+}
+
+.input {
+  width: 100%;
+  padding: 14px 18px;
+  border-radius: 30px;
+  border: 1px solid rgba(255,255,255,0.18);
+  background: rgba(255,255,255,0.12);
+  font-size: 16px;
+  font-family: var(--font-body);
+  color: rgba(255,255,255,0.95);
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.input:focus {
+  background: rgba(255,255,255,0.18);
+  border-color: rgba(255,255,255,0.36);
+  box-shadow: 0 6px 18px rgba(2,6,23,0.08);
+}
+
+/* placeholder color */
+.input::placeholder {
+  color: rgba(255,255,255,0.75);
+}
+
+.login-btn {
+  width: 60%;
+  max-width: 260px;
+  padding: 12px 18px;
+  margin: 18px auto 8px auto;
+  display: block;
+  border: none;
+  border-radius: 28px;
+  background: var(--color-primary);
+  color: var(--color-text);
+  font-size: 16px;
+  font-weight: 600;
+  font-family: var(--font-body);
+  cursor: pointer;
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+  box-shadow: 0 6px 18px rgba(16,185,129,0.12);
+}
+
+.login-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(16,185,129,0.18);
+}
+
+.login-btn:active {
+  transform: translateY(1px);
+}
+
+.forgot {
+  text-align: right;
+  margin-top: 5px;
+  font-size: 14px;
+  color: #fff;
+  text-decoration: none;
+}
+
+.forgot:hover {
+  text-decoration: underline;
+}
+
+.divider {
+  text-align: center;
+  margin: 35px 0;
+  color: #fff;
+  font-size: 14px;
+  letter-spacing: 1px;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 35px;
+  margin-top: 25px;
+}
+
+.social-btn {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  font-size: 20px;
+}
+
+.social-btn:hover {
+  transform: scale(1.1);
+}
+
+.google {
+  background: #fff;
+  color: #DB4437;
+}
+
+.facebook {
+  background: #fff;
+  color: #4267B2;
+}
+
+.twitter {
+  background: #fff;
+  color: #1DA1F2;
+}
+/* ===== RESPONSIVE PARA SMARTWATCH ===== */
+@media (max-width: 400px) {
+  .container {
+    padding-inline: 0.75rem;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .subtitle {
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+  }
+
+  /* ===== CARRUSEL EN SMARTWATCH ===== */
+  .carousel-container {
+    max-width: 100%;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  }
+
+  .carousel-track img {
+    height: 160px; /* Más pequeño para smartwatch */
+    object-fit: cover;
+    border-radius: 16px;
+  }
+
+  .carousel-btn {
+    width: 36px;
+    height: 36px;
+    font-size: 1rem;
+  }
+
+  .carousel-btn.prev { left: 8px; }
+  .carousel-btn.next { right: 8px; }
+
+  /* Indicadores más grandes para toque */
+  .carousel-indicators {
+    bottom: 12px;
+    gap: 6px;
+  }
+
+  .indicator {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+  }
+
+  .indicator.active,
+  .indicator:hover {
+    background: white;
+  }
+
+  /* ===== TARJETAS EN SMARTWATCH ===== */
+  .cards {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .card {
+    padding: 1rem;
+    border-radius: 16px;
+  }
+
+  .card-icon {
+    width: 56px;
+    height: 56px;
+    font-size: 1.5rem;
+  }
+
+  .card h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .card p {
+    font-size: 0.85rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    border-radius: 8px;
+  }
+
+  .btn.full {
+    padding: 0.75rem 1.25rem;
+    font-size: 1rem;
+  }
+
+  /* ===== HEADER Y FOOTER ===== */
+  .site-header .container {
+    padding: 0.75rem 0;
+  }
+
+  .brand {
+    font-size: 1.1rem;
+  }
+
+  .logo {
+    height: 28px;
+  }
+
+  .main-nav ul {
+    gap: 1rem;
+  }
+
+  .main-nav a {
+    font-size: 0.85rem;
+  }
+
+  .site-footer {
+    padding: 1rem 0;
+  }
+
+  .site-footer small {
+    font-size: 0.85rem;
+  }
+}

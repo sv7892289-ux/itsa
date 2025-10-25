@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Reinscripción · ITSaBOT</title>
+
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#032221">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="ITSaBOT">
+  <link rel="apple-touch-icon" href="/img/icon-192.png">
+
+  <link rel="stylesheet" href="/css/estilo-tramites.css">
+  <link rel="stylesheet" href="/css/reinscripcion-style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="tramites-page">
+  <header class="site-header" role="banner">
+    <div class="container">
+      <a class="brand" href="/menu.html" aria-label="Volver al menú">
+        <img src="/img/logo.png" alt="Logo ITSaBOT" class="logo">
+        <span>ITSaBOT</span>
+      </a>
+      <nav id="main-nav-menu" class="main-nav" role="navigation" aria-label="Navegación secundaria">
+        <ul>
+          <li><a href="/menu.html">Menú</a></li>
+          <li><a href="/chat.html">Chat</a></li>
+          <li><a href="/tramites.html">Trámites</a></li>
+          <li><a href="/calendario.html">Calendario</a></li>
+          <li><a href="/info.html">Información</a></li>
+          <li><a href="/perfil.html">Perfil</a></li>
+        </ul>
+      </nav>
+      <!-- Botón hamburguesa (móvil) -->
+      <button class="menu-toggle" aria-expanded="false" aria-controls="main-nav-menu">
+        <span class="hamburger"></span>
+        <span class="sr-only">Menú</span>
+      </button>
+    </div>
+  </header>
+
+  <main class="container" role="main">
+    <h1>Reinscripción</h1>
+    <p class="intro">Proceso para estudiantes que regresan.</p>
+
+    <!-- Envolvemos el formulario para el estilo flotante -->
+    <div class="form-wrapper">
+      <form>
+        <div class="form-group">
+          <label for="nombre">Nombre completo</label>
+          <input type="text" id="nombre" placeholder="Ingresa tu nombre...">
+        </div>
+        <div class="form-group">
+          <label for="email">Email institucional</label>
+          <input type="email" id="email" placeholder="tu.correo@itsacaba.edu.bo">
+        </div>
+        <div class="form-group">
+          <label for="carrera">Carrera</label>
+          <input type="text" id="carrera" value="Secretariado Ejecutivo" disabled>
+        </div>
+        <button type="button" class="btn primary">Iniciar reinscripción</button>
+      </form>
+    </div>
+
+    <section class="info-section">
+      <h2>¿Qué necesitas?</h2>
+      <ul>
+        <!-- Íconos minimalistas se añaden con CSS -->
+        <li>Tu código de estudiante.</li>
+        <li>Pago de derechos de reinscripción.</li>
+        <li>Documentos actualizados (si aplica).</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <small>© Instituto Tecnológico Sacaba - ITSaBOT</small>
+    </div>
+  </footer>
+
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/sw.js')
+        .then(() => console.log('Service Worker registrado'))
+        .catch(err => console.warn('Error SW:', err));
+    }
+  </script>
+  <script src="/js/mobile-menu.js" defer></script>
+</body>
+</html>

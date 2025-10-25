@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Trámites · ITSaBOT</title>
+
+  <!-- PWA: manifest y colores -->
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#032221">
+
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="ITSaBOT">
+  <link rel="apple-touch-icon" href="/img/icon-192.png">
+
+  <!-- ===== ESTILOS ===== -->
+  <!-- Enlazamos la hoja de estilos correcta para trámites -->
+  <link rel="stylesheet" href="/css/tramites-style.css">
+  
+  <!-- Fuentes y librerías -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="tramites-page">
+  <header class="site-header" role="banner">
+    <div class="container">
+      <a class="brand" href="/menu.html" aria-label="Volver al inicio">
+        <img src="/img/logo.png" alt="Logo ITSaBOT" class="logo">
+        <span>ITSaBOT</span>
+      </a>
+      <nav id="main-nav-menu" class="main-nav" role="navigation" aria-label="Menú principal">
+        <ul>
+          <li><a href="/menu.html">Menú</a></li>
+          <li><a href="/chat.html">Chat</a></li>
+          <li><a href="/tramites.html">Trámites</a></li>
+          <li><a href="/calendario.html">Calendario</a></li>
+          <li><a href="/info.html">Información</a></li>
+          <li><a href="/perfil.html">Perfil</a></li>
+        </ul>
+      </nav>
+      <!-- Botón hamburguesa (móvil) -->
+      <button class="menu-toggle" aria-expanded="false" aria-controls="main-nav-menu">
+        <span class="hamburger"></span>
+        <span class="sr-only">Menú</span>
+      </button>
+    </div>
+  </header>
+
+  <main class="container" role="main">
+    <h1>Trámites</h1>
+    <p class="intro">Realiza tus trámites institucionales de forma digital, rápida y segura desde un solo lugar.</p>
+
+    <section class="tramites-grid">
+      <!-- Enlaces corregidos y con nueva estructura -->
+      <a href="/extra/certificado.html" class="tramite-card">
+        <div class="icon"><i class="fas fa-award"></i></div>
+        <h3>Certificado de Estudios</h3>
+        <p>Notas o matrícula actual.</p>
+      </a>
+
+      <a href="/extra/inscripcion.html" class="tramite-card">
+        <div class="icon"><i class="fas fa-user-plus"></i></div>
+        <h3>Inscripción</h3>
+        <p>Nuevos estudiantes.</p>
+      </a>
+
+      <a href="/extra/constancia.html" class="tramite-card">
+        <div class="icon"><i class="fas fa-file-invoice"></i></div>
+        <h3>Constancia de Matrícula</h3>
+        <p>Para trámites externos.</p>
+      </a>
+
+      <a href="/extra/reinscripcion.html" class="tramite-card">
+        <div class="icon"><i class="fas fa-redo-alt"></i></div>
+        <h3>Reinscripción</h3>
+        <p>Estudiantes que regresan.</p>
+      </a>
+    </section>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <small>© Instituto Tecnológico Sacaba - ITSaBOT</small>
+    </div>
+  </footer>
+
+  <!-- Botón flotante de chat -->
+  <a href="/chat.html" class="floating-chat-btn" aria-label="Abrir chat">
+    <i class="fas fa-comments"></i>
+    <span>Chat</span>
+  </a>
+
+  <!-- ===== SCRIPTS ===== -->
+  <script src="/js/mobile-menu.js" defer></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/sw.js')
+        .then(() => console.log('Service Worker registrado en tramites.html'))
+        .catch(err => console.warn('Error SW:', err));
+    }
+  </script>
+</body>
+</html>

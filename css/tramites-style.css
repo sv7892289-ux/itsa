@@ -1,0 +1,414 @@
+/* === ESTILO FUTURISTA PARA TRÁMITES - ITSaBOT === */
+
+:root {
+  /* Paleta de colores (consistente con el resto de la app) */
+  --lime-glow: #A5EC60;
+  --natural-green: #419310;
+  --deep-green: #1C621B;
+  --grayish-teal: #487070;
+  --petrol-blue: #18333D;
+  --dark-blue-bg: #0B1E26;
+  --text-light: #E0E6E8;
+
+  /* Tipografía */
+  --font-main: 'Poppins', 'Inter', system-ui, sans-serif;
+
+  /* Radios y Sombras */
+  --radius-lg: 24px;
+  --radius-md: 16px;
+  --panel-shadow: 0 16px 40px rgba(0, 0, 0, 0.3);
+  --glow-shadow-hover: 0 0 20px rgba(165, 236, 96, 0.3);
+}
+
+/* --- RESET BÁSICO Y CONFIGURACIÓN DEL BODY --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-main);
+  color: var(--text-light);
+  background-color: var(--dark-blue-bg);
+  /* Fondo con gradiente radial y patrón SVG biomimético */
+  background-image:
+    radial-gradient(ellipse at 70% 30%, var(--petrol-blue) 0%, transparent 50%),
+    radial-gradient(ellipse at 30% 70%, var(--deep-green) 0%, transparent 50%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%2318333D' fill-opacity='0.2'%3E%3Cpath d='M0 38.59l2.83-2.83 1.41 1.41L1.41 40H0v-1.41zM0 1.4l2.83 2.83 1.41-1.41L1.41 0H0v1.41zM38.59 40l-2.83-2.83 1.41-1.41L40 38.59V40h-1.41zM40 1.41l-2.83 2.83-1.41-1.41L38.59 0H40v1.41zM20 18.6l2.83-2.83 1.41 1.41L21.41 20l2.83 2.83-1.41 1.41L20 21.41l-2.83 2.83-1.41-1.41L18.59 20l-2.83-2.83 1.41-1.41L20 18.59z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  background-attachment: fixed;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* --- HEADER Y FOOTER (Estilo global de la app) --- */
+.site-header {
+  background: rgba(11, 30, 38, 0.5);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(72, 112, 112, 0.2);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  padding: 1rem 0;
+}
+
+.site-header .container,
+.site-footer .container {
+  width: 90%;
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+  color: #fff;
+  font-weight: 600;
+  font-size: 1.25rem;
+}
+.logo {
+  height: 36px;
+  filter: drop-shadow(0 0 8px rgba(165, 236, 96, 0.3));
+}
+
+.main-nav a {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+.main-nav a:hover {
+  color: var(--lime-glow);
+}
+
+.site-footer {
+  padding: 2rem 0;
+  margin-top: auto;
+  background: transparent;
+  text-align: center;
+}
+.site-footer small {
+  color: var(--grayish-teal);
+  font-size: 0.875rem;
+}
+
+/* --- CONTENIDO PRINCIPAL Y TARJETAS DE TRÁMITES --- */
+.container {
+  width: 90%;
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 2.5rem 0;
+}
+
+h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 0.75rem;
+  text-align: center;
+  text-shadow: 0 0 10px rgba(165, 236, 96, 0.2);
+}
+
+.intro {
+  font-size: 1.1rem;
+  color: var(--text-light);
+  opacity: 0.8;
+  text-align: center;
+  margin-bottom: 3rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.tramites-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.tramite-card {
+  display: block;
+  text-decoration: none;
+  background: rgba(24, 51, 61, 0.6);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  border: 1px solid rgba(72, 112, 112, 0.3);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+}
+
+.tramite-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3), var(--glow-shadow-hover);
+}
+
+.tramite-card .icon {
+  font-size: 2.5rem;
+  color: var(--lime-glow);
+  margin-bottom: 1rem;
+}
+
+.tramite-card h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 0.5rem;
+}
+
+.tramite-card p {
+  font-size: 0.95rem;
+  color: var(--text-light);
+  opacity: 0.7;
+  line-height: 1.5;
+}
+
+/* --- RESPONSIVE DESIGN --- */
+
+/* Smartwatch (muy pequeño) */
+@media (max-width: 400px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+  .container {
+    padding: 1.5rem 0.5rem;
+  }
+  
+  .tramites-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .tramite-card {
+    padding: 1.5rem;
+  }
+  
+  .tramite-card .icon {
+    font-size: 2rem;
+  }
+  
+  .tramite-card h3 {
+    font-size: 1.1rem;
+  }
+  
+  .tramite-card p {
+    font-size: 0.85rem;
+  }
+}
+
+/* Móviles */
+@media (max-width: 600px) {
+  h1 {
+    font-size: 2rem;
+  }
+  .container {
+    padding: 2rem 1rem;
+  }
+  
+  .tramites-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+}
+
+/* Tabletas */
+@media (min-width: 601px) and (max-width: 1024px) {
+  h1 {
+    font-size: 2.25rem;
+  }
+  
+  .container {
+    max-width: 900px;
+    padding: 2.5rem 2rem;
+  }
+  
+  .tramites-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+  
+  .tramite-card {
+    padding: 2.25rem;
+  }
+}
+
+/* Laptops y desktop */
+@media (min-width: 1025px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+  
+  .container {
+    max-width: 1200px;
+    padding: 3rem 2rem;
+  }
+  
+  .tramites-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem;
+  }
+  
+  .tramite-card {
+    padding: 2.5rem;
+  }
+}
+
+/* ================================================================== */
+/* === INICIO: CÓDIGO AÑADIDO PARA MENÚ MÓVIL Y RESPONSIVE HEADER === */
+/* ================================================================== */
+
+/* --- MENÚ HAMBURGUESA FUNCIONAL --- */
+.menu-toggle {
+  display: block;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  z-index: 1001;
+  width: 44px;
+  height: 44px;
+  position: relative;
+  border-radius: 8px;
+  transition: background 0.3s ease;
+}
+
+.menu-toggle:hover {
+  background: rgba(165, 236, 96, 0.1);
+}
+
+.hamburger {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--lime-glow);
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 0.3s ease;
+  border-radius: 2px;
+}
+
+.hamburger::before,
+.hamburger::after {
+  content: '';
+  position: absolute;
+  width: 24px;
+  height: 2px;
+  background: var(--lime-glow);
+  transition: all 0.3s ease;
+  border-radius: 2px;
+  left: 0;
+}
+
+.hamburger::before { 
+  top: -8px; 
+}
+.hamburger::after { 
+  top: 8px; 
+}
+
+/* Animación del icono a 'X' cuando está activo */
+.menu-toggle.active .hamburger {
+  background: transparent;
+}
+
+.menu-toggle.active .hamburger::before {
+  top: 0;
+  transform: rotate(45deg);
+}
+
+.menu-toggle.active .hamburger::after {
+  bottom: 0;
+  transform: rotate(-45deg);
+}
+
+/* Media Query para pantallas grandes */
+@media (min-width: 768px) {
+  .menu-toggle {
+    display: none;
+  }
+
+  .main-nav {
+    position: static;
+    width: auto;
+    height: auto;
+    background: transparent;
+    backdrop-filter: none;
+    transform: none;
+    padding-top: 0;
+  }
+
+  .main-nav ul {
+    flex-direction: row;
+    padding-top: 0;
+    gap: 1.5rem;
+  }
+
+  .main-nav ul li a {
+    font-size: 1rem;
+    padding: 0.5rem;
+  }
+}
+
+/* Media Query para móviles */
+@media (max-width: 767px) {
+  .main-nav {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 280px;
+    height: 100vh;
+    background: rgba(11, 30, 38, 0.95);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    transition: right 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    box-shadow: -10px 0 30px rgba(0,0,0,0.3);
+    border-left: 1px solid var(--grayish-teal);
+    z-index: 999;
+    padding: 5rem 2rem 2rem;
+  }
+
+  .main-nav.active {
+    right: 0;
+  }
+
+  .main-nav ul {
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .main-nav a {
+    font-size: 1.2rem;
+    padding: 1rem 1.5rem;
+    display: block;
+    width: 100%;
+    text-align: center;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+  }
+
+  .main-nav a:hover {
+    background: rgba(165, 236, 96, 0.1);
+    color: var(--lime-glow);
+  }
+}

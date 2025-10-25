@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Chat · ITSaBOT</title>
+<link rel="manifest" href="/manifest.json">
+
+  <!-- Color de la barra de estado en Android -->
+  <meta name="theme-color" content="#3b82f6">
+
+  <!-- Soporte para iOS (Safari) -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="ITSaBOT">
+  <link rel="apple-touch-icon" href="/img/icon-192.png">
+
+  <!-- ===== ESTILOS ===== -->
+  <link rel="stylesheet" href="/css/estilo.css">
+  
+  <!-- Fuentes y librerías externas -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<body class="chat-page">
+  <header class="site-header" role="banner">
+    <div class="container">
+      <a class="brand" href="/menu.html" aria-label="Volver al menú">
+        <img src="/img/logo.png" alt="Logo ITSaBOT" class="logo">
+        <span>ITSaBOT</span>
+      </a>
+      <nav id="main-nav-menu" class="main-nav" role="navigation" aria-label="Navegación secundaria">
+        <ul>
+          <li><a href="/chat.html">Chat</a></li>
+          <li><a href="/tramites.html">Trámites</a></li>
+          <li><a href="/calendario.html">Calendario</a></li>
+          <li><a href="/info.html">Información</a></li>
+          <li><a href="/perfil.html">Perfil</a></li>
+        </ul>
+      </nav>
+      <!-- Botón hamburguesa (móvil) -->
+      <button class="menu-toggle" aria-expanded="false" aria-controls="main-nav-menu">
+        <span class="hamburger"></span>
+        <span class="sr-only">Menú</span>
+      </button>
+    </div>
+  </header>
+
+  <main class="container" role="main">
+    <h1>Asistente Virtual</h1>
+
+    <section id="chat-section" aria-labelledby="chat-title">
+      <p class="intro" style="text-align: center; max-width: 600px; margin: 0 auto 2rem auto;">
+        Habla con nuestro asistente virtual para resolver consultas sobre trámites, calendarios, horarios y más.
+      </p>
+
+      <div id="chat-container" class="chat-box">
+        <div id="chat-messages" aria-live="polite">
+          <div class="message bot">
+            ¡Hola! Soy ITSaBOT, tu asistente virtual del Instituto Tecnológico Sacaba. ¿En qué puedo ayudarte hoy?
+          </div>
+        </div>
+        <form id="chat-form" class="chat-input-area">
+          <input type="text" id="user-input" placeholder="Escribe tu mensaje..." autocomplete="off" aria-label="Escribe tu mensaje">
+          <button type="submit" class="btn" aria-label="Enviar mensaje">
+            <i class="fas fa-paper-plane"></i>
+          </button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <small>© Instituto Tecnológico Sacaba - ITSaBOT</small>
+    </div>
+  </footer>
+
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/sw.js')
+        .then(() => console.log('Service Worker registrado en chat.html'))
+        .catch(err => console.warn('Error SW:', err));
+    }
+  </script>
+  <script src="/js/mobile-menu.js" defer></script>
+  <script src="/js/animations.js" defer></script>
+  <script src="/js/chatbot.js" defer></script>
+</body>
+</html>
